@@ -1,6 +1,10 @@
 // -- define root folder as project name -- //
 
-var projectname = 'bootstrap_project';
+var projectname = 'add_root_folder_name';
+
+// -- define test url -- //
+
+var testurl = projectname + '.localhost';
 
 // -- require gulp plugins -- //
 
@@ -115,7 +119,7 @@ function copyHTML() {
 
 function watch() {
   browserSync.init({
-    proxy: 'bootstrap.localhost'
+    proxy: testurl
   });
   gulp.watch(styleWatchFiles, gulp.series([css, concatCSS]));
   gulp.watch(jsSRC, javascript);
